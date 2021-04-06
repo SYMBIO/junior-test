@@ -1,3 +1,5 @@
+@import '~bulma/bulma';
+
 html,
 body {
   padding: 0;
@@ -13,4 +15,8 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+dt {
+  margin-top: 1rem;
 }
