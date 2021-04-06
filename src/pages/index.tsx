@@ -74,12 +74,11 @@ const Index = ({ cards }: IndexProps) => (
             make it different.
           </dd>
           <dt>
-            <strong>
-              Not all users can scroll horizontally.
-            </strong>
+            <strong>Not all users can scroll horizontally with mouse.</strong>
           </dt>
           <dd>
-            It'd be nice to let users easily move the strip left or right with some buttons.
+            It'd be nice to let users easily move the strip left or right using
+            some buttons. Users with touch devices don't need them.
           </dd>
         </dl>
       </main>
