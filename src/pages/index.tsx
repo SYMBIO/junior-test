@@ -73,6 +73,14 @@ const Index = ({ cards }: IndexProps) => (
             devices. Should the scrollbar be the same for both cases? If not,
             make it different.
           </dd>
+          <dt>
+            <strong>
+              Not all users can scroll horizontally.
+            </strong>
+          </dt>
+          <dd>
+            It'd be nice to let users easily move the strip left or right with some buttons.
+          </dd>
         </dl>
       </main>
     </div>
