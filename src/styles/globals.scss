@@ -8,6 +8,10 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+h1 {
+  padding-top: 60px;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -20,3 +24,16 @@ a {
 dt {
   margin-top: 1rem;
 }
+
+.container {
+  padding: 0 16px;
+
+  @media screen and (min-width: 1000px) {
+    padding: 0;
+  }
+}
+
+.strike {
+  text-decoration: line-through;
+}
+

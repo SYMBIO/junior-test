@@ -1,17 +1,32 @@
 import React from "react";
 import styles from "./Card.module.scss";
+import clsx from "clsx";
 
-export interface CardProps {
-  image: any;
-  header: any;
-  content: any;
+interface ImageType {
+    alt: string
+    src: string
 }
 
-const Card = ({ image, header, content }: CardProps) => (
-  <div className={`card ${styles.card}`}>
+export interface CardProps {
+  image: ImageType;
+  header: {
+      image: ImageType
+      subtitle: string
+      title: string
+  };
+  content: {
+      subtitle: string
+      title: string
+  } | string
+    className: string
+}
+
+const Card = ({ image, header, content , className}: CardProps) => (
+
+  <div className={clsx('card', styles.card, className)}>
     <div className="card-image">
       <figure className="image is-4by3">
-        <img {...image} />
+        <img {...image}  />
       </figure>
     </div>
     <div className="card-content">
