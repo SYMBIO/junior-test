@@ -1,8 +1,96 @@
+$contentWidth: 1344px;
+$itemGap: 16px;
+
 .slider {
+  position: relative;
+}
+
+.scrollWrapper {
+  scroll-snap-type: x mandatory;
+  overflow: scroll visible;
+  padding: 4rem 0;
+  margin-bottom: 4rem;
+
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &::-webkit-scrollbar {
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+}
+
+.items {
   display: flex;
   flex-wrap: nowrap;
-  overflow: scroll visible;
-  gap: 1rem;
-  padding: 1rem 0;
-  margin-bottom: 4rem;
+  padding-left: calc((100vw - #{$contentWidth}) / 2);
+  padding-right: calc((100vw - #{$contentWidth}) / 2);
+  width: max-content;
+}
+
+.item {
+  width: calc((#{$contentWidth} - (3 * #{$itemGap})) / 4);
+  position: relative;
+  opacity: 1;
+  transition: opactiy linear 1s;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    scroll-snap-align: start;
+    left: calc((100vw - #{$contentWidth}) / -2);
+    top: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.btnPrev,
+.btnNext {
+  display: none;
+  @media screen and (min-width: 1000px) {
+      display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 30px 10px;
+    font-size: 50px;
+    border: 0;
+    background-color: rgba(255, 255, 255, 0.25);
+    color: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    transition: all 0.5s ease;
+  }
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.btnPrev {
+  left: calc((100vw - #{$contentWidth}) / 2);
+  margin-left: -100px;
+}
+
+.btnNext {
+  right: calc((100vw - #{$contentWidth}) / 2);
+  margin-right: -100px;
 }

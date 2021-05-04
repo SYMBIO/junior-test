@@ -3,12 +3,31 @@
   transition-property: transform, box-shadow;
   transition-duration: 0.5s;
   flex-shrink: 0;
-  width: 20rem;
   height: 30rem;
-  box-shadow: -1rem 1rem 2rem rgba(0, 0, 0, 0.5);
+  z-index: auto;
+
+  &::before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		border-radius: inherit;
+		box-shadow: -1rem 1rem 2rem rgba(0, 0, 0, 0.5);
+		z-index: -1;
+		transition: box-shadow .5s;
+
+    &:hover {
+      box-shadow: -2rem 2rem 2rem rgba(0, 0, 0, 0.5);
+    }
+	}
+
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
 
   &:hover {
     transform: translateY(-1rem);
-    box-shadow: -2rem 2rem 2rem rgba(0, 0, 0, 0.5);
   }
 }
