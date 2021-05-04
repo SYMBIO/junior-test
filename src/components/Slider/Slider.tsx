@@ -27,7 +27,7 @@ const Slider = ({ cards }: SliderProps) => {
   const scrollRef = useRef<HTMLDivElement>();
   useEffect(() => {
     if (scrollRef.current) {
-      window.scrollRef = scrollRef.current;
+      // window.scrollRef = scrollRef.current;
       scrollRef.current.scrollLeft = currentItem * itemWidth;
     }
   }, [currentItem]);
